@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as _ from 'underscore';
 
 @Component({
 	selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 	title = 'knights-tour';
-	size:number = 5;
+	size:number = null;
 
 	startTime:any;
 	endTime:any;
@@ -22,7 +23,7 @@ export class AppComponent {
 
 	boardSize = 0;
 
-	type = "Heuristic";
+	type = "DFS";
 
 	resetBoard(size){
 		this.solutionFound = false;
