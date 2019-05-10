@@ -1,27 +1,30 @@
 # KnightsTour
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+The following code/project is the intellectual property of:
+1. Shanahan Michael Baptista (shanahan.baptista@gmail.com / sbaptis2@binghamton.edu)
+2. Erwin Joshua Palani (erwin.palani@gmail.com / epalani1@binghamton.edu)
+
+The code computes and displays The Knight's Tour Problem using either of the 3 methods:
+1. Brute Force
+2. Depth First Search (DFS)
+3. Heuristics
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+## Pre-requisites
+	- Ensure that node is installed
+	- Ensure that you have a stable internet connection as the project uses CDN's
+	- Run `npm install` to install node_modules before running the project.
 
 ## Development server
+	- To run the project, use `ng serve --open` which will automatically open `http://localhost:4000/`.
+	- The app will automatically reload if you change any of the source files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+-------------------------------------------------------------------------------------------------------------------
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## References
+	- DFS: https://github.com/akshaybahadur21/KnightsTour
+	- Warnsdorff's Rule: https://github.com/welle108/KnightsTour
