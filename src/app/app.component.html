@@ -1,0 +1,89 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="row">
+	<div class="col text-center">
+		<!-- <h1 class="">
+			Welcome to {{ title }}!
+		</h1> -->
+		<div>
+			<img src="../assets/images/knight.png" width="100%" height="auto">
+			<img src="../assets/images/title.png" width="100%" height="auto">
+		</div>
+	</div>
+</div>
+
+<br>
+
+<div class="row text-center">
+	<div class="col-4 offset-4">
+		<div class="form-group">
+			<input type="text" class="form-control" name="input" placeholder="Enter size of board" [(ngModel)]="size" (blur)="createBoard(size)" autofocus>
+		</div>
+	</div>
+</div>
+
+<div class="row text-center" *ngIf="chessBoard.length > 0">
+	<div class="col-8 offset-2">
+		<div class="board-container">
+			<!-- Code to allow user input -->
+			<div class="row text-center">
+				<div class="col-auto offset-auto">
+					<div class="form-group">
+						<input type="radio" name="type" [(ngModel)]="type" value="DFS">&nbsp;DFS
+					</div>
+				</div>
+				<div class="col-auto">
+					<div class="form-group">
+						<input type="radio" name="type" [(ngModel)]="type" value="Brute">&nbsp;Brute Force
+					</div>
+				</div>
+				<div class="col-auto">
+					<div class="form-group">
+						<input type="radio" name="type" [(ngModel)]="type" value="Heuristic">&nbsp;Heuristics
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col">
+					<div class="form-group">
+						<input type="text" name="" class="form-control" placeholder="Enter row number" [(ngModel)]="start_x">
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<input type="text" name="" class="form-control" placeholder="Enter column number" [(ngModel)]="start_y">
+					</div>
+				</div>
+				<div class="col-auto text-left">
+					<button class="btn btn-success" (click)="solveTour(start_x, start_y, type)">
+						<i class="fa fa-play"></i>
+					</button>
+				</div>
+			</div>
+
+			<!-- Code to display the board -->
+			<div class="" *ngFor="let i of chessBoard; let iindex=index; let oddi = odd; let eveni=even last as lasti">
+				<div class="square-container d-inline-block square-index">
+					{{iindex+1}}
+				</div>
+				<div class="square-container d-inline-block square-black" [class.square-white]="(oddi && evenj) || (oddj && eveni)" *ngFor="let j of i; let jindex=index; let oddj=odd; let evenj=even; last as lastj" >
+					<div *ngIf="j>=0">
+						{{j+1}}
+					</div>
+				</div>
+
+				<div class="" style="margin-left: 75px" *ngIf="lasti">
+					<div class="d-inline-block square-container square-index" *ngFor="let j of i; let jindex = index">
+						{{jindex+1}}
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group text-danger" *ngIf="solutionFound">
+				Computed path in {{endTime - startTime | number: '1.0-3'}}ms. 
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
